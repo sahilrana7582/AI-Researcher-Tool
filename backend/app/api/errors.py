@@ -11,8 +11,8 @@ logger = logging.getLogger(__name__)
 LLM_FAILURE_MESSAGE = "The language model provider failed. Please try again later."
 
 
-async def llm_error_handler(request: Request, exc: LLMError) -> JSONResponse:
-    # The only place this error is logged. The traceback includes the original
+def log_llm_error(request: Request, exc: LLMError) -> None:
+    # The only place an LLMError is logged. The traceback includes the original
     # provider exception via `raise ... from`, but the client never sees it.
     logger.error(
         "LLM provider failure on %s %s",
@@ -20,6 +20,10 @@ async def llm_error_handler(request: Request, exc: LLMError) -> JSONResponse:
         request.url.path,
         exc_info=exc,
     )
+
+
+async def llm_error_handler(request: Request, exc: LLMError) -> JSONResponse:
+    log_llm_error(request, exc)
     return JSONResponse(
         status_code=502,
         content=ErrorResponse(detail=LLM_FAILURE_MESSAGE).model_dump(),
