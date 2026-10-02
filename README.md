@@ -40,6 +40,26 @@ uvicorn app.main:app --reload
 - Health check: http://localhost:8000/health
 - API docs: http://localhost:8000/docs
 
+## API
+
+`POST /api/v1/research` answers a research question.
+
+```bash
+curl -s localhost:8000/api/v1/research \
+  -H 'content-type: application/json' \
+  -d '{"query": "Explain how Kafka ISR replication works"}'
+```
+
+```json
+{"answer": "..."}
+```
+
+| Status | Meaning |
+|---|---|
+| 200 | Answer generated |
+| 422 | Invalid request body (empty or over 5000 characters) |
+| 502 | The LLM provider failed; the response body is a fixed generic message |
+
 ## Test and lint
 
 ```bash

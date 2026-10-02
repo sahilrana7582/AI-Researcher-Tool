@@ -150,6 +150,7 @@ pnpm-debug.log*
 
 *.tmp
 *.temp
+scratch_*.py
 *.swp
 *.swo
 *~

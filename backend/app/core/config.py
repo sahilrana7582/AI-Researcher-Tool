@@ -2,7 +2,7 @@ from functools import lru_cache
 from pathlib import Path
 from typing import Literal
 
-from pydantic import SecretStr
+from pydantic import Field, SecretStr
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 BACKEND_DIR = Path(__file__).resolve().parents[2]
@@ -15,8 +15,8 @@ class Settings(BaseSettings):
 
     llm_api_key: SecretStr
     llm_model: str = "gpt-6-luna"
-    llm_timeout: int = 30
-    llm_max_retries: int = 2
+    llm_timeout_seconds: float = Field(default=30, gt=0)
+    llm_max_retries: int = Field(default=2, ge=0)
 
     model_config = SettingsConfigDict(
         env_file=BACKEND_DIR / ".env",
