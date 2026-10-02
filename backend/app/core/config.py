@@ -14,6 +14,9 @@ class Settings(BaseSettings):
     log_level: Literal["DEBUG", "INFO", "WARNING", "ERROR"] = "INFO"
 
     llm_api_key: SecretStr
+    llm_model: str = "gpt-6-luna"
+    llm_timeout: int = 30
+    llm_max_retries: int = 2
 
     model_config = SettingsConfigDict(
         env_file=BACKEND_DIR / ".env",
