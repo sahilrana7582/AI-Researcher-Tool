@@ -1,0 +1,177 @@
+# ============================================================
+# Python
+# ============================================================
+
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Virtual environments
+.venv/
+venv/
+env/
+ENV/
+.env/
+.venv/
+
+# Python tooling
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.pyre/
+.coverage
+.coverage.*
+htmlcov/
+.tox/
+.nox/
+
+# Packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# ============================================================
+# Environment / Secrets
+# ============================================================
+
+.env
+.env.*
+!.env.example
+
+# Local credentials / secrets
+*.pem
+*.key
+*.crt
+
+# ============================================================
+# Backend - local data
+# ============================================================
+
+backend/__pycache__/
+backend/.pytest_cache/
+
+# Uploaded files
+backend/uploads/
+backend/uploaded_files/
+
+# Generated files
+backend/generated/
+backend/output/
+backend/tmp/
+backend/temp/
+
+# Local databases
+*.db
+*.sqlite
+*.sqlite3
+
+# ============================================================
+# AI / RAG local data
+# ============================================================
+
+# Vector databases
+backend/chroma/
+backend/chroma_db/
+backend/.chroma/
+
+# FAISS indexes
+backend/faiss/
+backend/indexes/
+
+# Local embeddings / model caches
+backend/models/
+backend/embeddings/
+
+# Local document/data files
+backend/data/
+backend/documents/
+
+# ============================================================
+# Frontend - Node
+# ============================================================
+
+node_modules/
+frontend/node_modules/
+
+# Build output
+frontend/dist/
+frontend/build/
+frontend/.next/
+frontend/out/
+
+# Vite
+frontend/.vite/
+
+# Next.js
+.next/
+
+# Environment files
+frontend/.env
+frontend/.env.*
+!frontend/.env.example
+
+# ============================================================
+# Logs
+# ============================================================
+
+*.log
+logs/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# ============================================================
+# IDE / Editors
+# ============================================================
+
+.idea/
+.vscode/
+*.iml
+
+# VS Code local settings
+.history/
+
+# ============================================================
+# macOS
+# ============================================================
+
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# macOS folder attributes
+._*
+
+# ============================================================
+# Temporary files
+# ============================================================
+
+*.tmp
+*.temp
+*.swp
+*.swo
+*~
+
+# ============================================================
+# Jupyter
+# ============================================================
+
+.ipynb_checkpoints/
+
+# ============================================================
+# Test / Coverage
+# ============================================================
+
+.pytest_cache/
+.coverage
+htmlcov/
+
+# ============================================================
+# Misc
+# ============================================================
+
+*.bak
+*.orig
