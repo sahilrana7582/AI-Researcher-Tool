@@ -1,0 +1,25 @@
+# API
+fastapi
+uvicorn[standard]
+
+# Environment
+python-dotenv
+
+# OpenAI
+openai
+
+# LangChain
+langchain
+langchain-openai
+langchain-community
+
+# PostgreSQL
+psycopg[binary]
+pgvector
+
+# Document processing
+pypdf
+python-docx
+
+# HTTP
+httpx
