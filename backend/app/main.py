@@ -1,6 +1,9 @@
 from fastapi import FastAPI
 
-from app.core.config import settings
+from app.core.config import get_settings
+
+
+settings = get_settings()
 
 app = FastAPI(
     title=settings.app_name,
@@ -9,5 +12,5 @@ app = FastAPI(
 
 
 @app.get("/health")
-async def health_check():
+async def health():
     return {"status": "ok"}
